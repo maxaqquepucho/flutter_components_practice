@@ -9,7 +9,28 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(10),
-        children: [_cardTipo1(), _cardTipo2()],
+        children: [
+          _cardTipo1(),
+          SizedBox(height: 30),
+          _cardTipo2(),
+          SizedBox(height: 30),
+          _cardTipo1(),
+          SizedBox(height: 30),
+          _cardTipo2(),
+          SizedBox(height: 30),
+          _cardTipo1(),
+          SizedBox(height: 30),
+          _cardTipo2(),
+          SizedBox(height: 30),
+          _cardTipo1(),
+          SizedBox(height: 30),
+          _cardTipo2(),
+          SizedBox(height: 30),
+          _cardTipo1(),
+          SizedBox(height: 30),
+          _cardTipo2(),
+          SizedBox(height: 30),
+        ],
       ),
     );
   }
@@ -42,7 +63,8 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Container(
+      // clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
           FadeInImage(
@@ -57,6 +79,25 @@ class CardPage extends StatelessWidget {
             child: Text('Voy aprendiendo flutter'),
           )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10,
+            spreadRadius: 2,
+            offset: Offset(0, 10),
+          )
+        ],
+        color: Colors.white,
+      ),
+      child: ClipRRect(
+        child: card,
+        borderRadius: BorderRadius.circular(30),
       ),
     );
   }
