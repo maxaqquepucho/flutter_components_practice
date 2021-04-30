@@ -11,6 +11,7 @@ class _ListaPageState extends State<ListaPage> {
   List<int> _listaNumeros = new List();
 
   int _ultimoItem = 0;
+  bool isLoading = false;
 
   @override
   initState() {
@@ -21,7 +22,8 @@ class _ListaPageState extends State<ListaPage> {
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) {
         print('SCROLL finished');
-        _agregar10();
+        // _agregar10();
+        fetchData();
       }
     });
   }
@@ -57,4 +59,6 @@ class _ListaPageState extends State<ListaPage> {
 
     setState(() {});
   }
+
+  Future fetchData() {}
 }
